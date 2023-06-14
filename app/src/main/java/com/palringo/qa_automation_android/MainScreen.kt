@@ -74,10 +74,8 @@ object MainScreen {
 
 }
 
-private val sample = MutableStateFlow(ScreenState(label = "0", onClickButton = {}))
-
 @Preview
 @Composable
 private fun ContentPreview() {
-    MainScreen.Screen(sample)
+    MainScreen.Screen(MutableStateFlow(ScreenState.EMPTY.copy(label = "0")))
 }

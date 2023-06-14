@@ -3,19 +3,16 @@ package com.palringo.qa_automation_android
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import kotlinx.coroutines.flow.MutableStateFlow
+import androidx.activity.viewModels
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val screenState = ScreenState(
-            label = "0",
-            onClickButton = {}
-        )
+        val viewModel: MainViewModel by viewModels()
 
         setContent {
-            MainScreen.Screen(MutableStateFlow(screenState))
+            MainScreen.Screen(viewModel.screenState)
         }
     }
 
