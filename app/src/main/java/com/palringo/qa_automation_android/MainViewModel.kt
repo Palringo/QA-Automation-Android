@@ -17,7 +17,6 @@ class MainViewModel : ViewModel() {
     private fun onButtonClick() {
         _screenState.value = when (_screenState.value.label) {
             "0" -> "1"
-            "1" -> "2"
             else -> "MAX"
         }.let { newLabel ->
             ScreenState(
